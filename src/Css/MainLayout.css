@@ -1,0 +1,6 @@
+.App-MainLayout {
+    height: 100vh;
+    background-image: url(/Background.jpg);
+    background-size: 100% 180%;
+    background-repeat: no-repeat;
+}

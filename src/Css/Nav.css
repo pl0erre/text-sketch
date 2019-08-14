@@ -1,0 +1,23 @@
+.App-Nav {
+  width: 100vw;
+  background-color: rgb(83, 121, 165);
+  margin: 0;
+  padding: 0;
+
+}
+
+.App-Nav ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  justify-content: space-around;
+}
+
+.App-Nav li {
+  margin: 0.5rem;
+}
+
+.App-Nav a {
+  text-decoration: none;
+  color: white;
+}
