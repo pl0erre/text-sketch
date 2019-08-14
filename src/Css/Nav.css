@@ -1,5 +1,5 @@
 .App-Nav {
-  width: 100vw;
+  max-width: 100vw;
   background-color: rgb(83, 121, 165);
   margin: 0;
   padding: 0;

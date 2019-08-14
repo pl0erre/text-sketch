@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Nav from './Nav';
 import '../Css/MainLayout.css';
-// import Footer from './Footer';
+import Footer from './Footer';
 
 export default class MainLayout extends Component {
   
@@ -10,7 +10,7 @@ export default class MainLayout extends Component {
       <div className="App-MainLayout">
         <Nav />
           {this.props.children}
-        {/* <Footer /> */}
+        <Footer />
       </div>
     )
   }

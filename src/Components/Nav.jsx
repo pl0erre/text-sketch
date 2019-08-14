@@ -7,7 +7,7 @@ export default class Nav extends Component {
     return (
       <div className="App-Nav">
         <ul>
-          <li><Link to="/info">How To</Link></li>
+          <li><Link to="/info">Info</Link></li>
           <li><Link to="/process">Process</Link></li>
           <li><Link to="/profile">Profile</Link></li>
         </ul>

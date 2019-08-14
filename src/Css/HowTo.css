@@ -1,0 +1,20 @@
+.App-HowTo {
+  height: 96vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 3px solid darkgray;
+}
+
+.App-HowTo h2 {
+  width: 50vw;
+  text-align: left;
+  margin: 1rem 0;
+  font-size: 2rem;
+}
+
+.App-HowTo p {
+  width: 50vw;
+  text-align: left;
+}

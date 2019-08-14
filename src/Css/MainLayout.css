@@ -1,6 +1,7 @@
 .App-MainLayout {
     height: 100vh;
-    background-image: url(/Background.jpg);
-    background-size: 100% 180%;
-    background-repeat: no-repeat;
+    /* background-image: url(/Background-mod2.png); */
+    /* background-size: center;
+    background-repeat: no-repeat; */
+    background-color: rgb(236, 235, 235)
 }

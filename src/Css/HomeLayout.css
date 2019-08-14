@@ -1,6 +1,6 @@
 .App-HomeLayout {
   height: 100vh;
-  background-image: url(/Background.jpg);
-  background-size: 100% 180%;
+  background-image: url(/Background-mod2.png);
+  background-size: cover;
   background-repeat: no-repeat;
 }
