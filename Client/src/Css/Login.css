@@ -1,0 +1,28 @@
+.App-Login {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.App-Login h2 {
+  margin: 1rem;
+  color: rgb(71, 71, 71);
+}
+
+.App-Login form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(226, 226, 226, 0.205);
+  border: 1px solid black;
+}
+
+.App-Login input {
+  width: 15vw;
+  height: 30px;
+  margin: 1rem 1rem;
+  padding: 0 0.4rem;
+}
