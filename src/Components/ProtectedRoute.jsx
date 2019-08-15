@@ -11,7 +11,6 @@ const ProtectedRoute  = ({component: Component, redirectUrl, ...rest}) => {
     <Route
       {...rest}
       render={ props  => {
-        debugger
         var user = auth.getUser();
         if(user){
           return <Component {...props} />

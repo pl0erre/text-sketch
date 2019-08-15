@@ -3,7 +3,7 @@ import qs from "querystring";
 
 export default class Auth {
   constructor(domain) {
-    this.domain = domain || process.env.REACT_APP_API; //! set correct url in .env
+    this.domain = domain || process.env.REACT_APP_API; //! change url when deploy
     this.login = this.login.bind(this);
   }
 
@@ -14,6 +14,7 @@ export default class Auth {
         baseURL: this.domain,
         headers: { 'content-type': 'application/x-www-form-urlencoded' },
         data: qs.stringify({username, password}),
+        withCredentials: true, //!
     })
     .then((response)=> {
       this.setUser(response.data);
@@ -21,13 +22,13 @@ export default class Auth {
   }
 
   signup({username, email, password}) {
-    debugger
     return axios({
         method: "POST",
         url: "/auth/signup",
         baseURL: this.domain,
         headers: { 'content-type': 'application/x-www-form-urlencoded' },
         data: qs.stringify({username, email, password}),
+        withCredentials: true, //!
     })
     .then((response)=> {
       this.setUser(response.data);
@@ -51,7 +52,8 @@ export default class Auth {
   logout(){
     return axios({
         baseURL: this.domain,
-        url: "/auth/logout"
+        url: "/auth/logout",
+        withCredentials: true, //!
     })
     .then((res)=> {
         localStorage.removeItem('user');

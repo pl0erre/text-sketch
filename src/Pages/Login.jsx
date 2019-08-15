@@ -31,7 +31,6 @@ export default class Login extends Component {
     event.preventDefault()
     auth.login(this.state.username, this.state.password)
     .then(() => {
-      debugger
       this.setState({ error: "" });
       this.props.history.push('/profile')
     })
