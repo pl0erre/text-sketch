@@ -26,7 +26,10 @@ export default class Signup extends Component {
 
   handleFormSubmit(event) {
     event.preventDefault();
-    auth.signup(this.state.user)
+    if(this.password !== this.password_repeat) {
+      alert("Passwords don't match");
+    } else {
+      auth.signup(this.state.user)
       .then(() => {
         this.setState({ error: "" });
         this.props.history.push("/login");
@@ -34,6 +37,8 @@ export default class Signup extends Component {
       .catch((err) => {
         this.setState({ error: err.message });
       });
+    }
+    
   };
 
   handleFormChange(event) {

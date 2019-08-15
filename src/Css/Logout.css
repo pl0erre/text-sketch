@@ -1,0 +1,13 @@
+/* .App-Logout {
+  height: 95vh;
+  background-image: url("https://images.pexels.com/photos/326333/pexels-photo-326333.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} */
+
+.loading-gif {
+  width: 60vw;
+  border: 10px solid rgba(83, 37, 5, 0.911)
+}

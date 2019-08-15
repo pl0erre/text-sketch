@@ -25,15 +25,35 @@ export default class App extends Component {
         <Route exact path="/" component={Home}                  />
         <Route exact path="/login" component={Login}            />
         <Route exact path="/signup" component={Signup}          />
-        <Route exact path="/info" component={Info}              />
-        <Route exact path="/profile" component={Profile}        />
-        <Route exact path="/process" component={Process}        />
-        <Route exact path="/collection" component={Collection}  />
+        {/* <Route exact path="/info" component={Info}              /> */}
+        {/* <Route exact path="/profile" component={Profile}        /> */}
+        {/* <Route exact path="/process" component={Process}        /> */}
+        {/* <Route exact path="/collection" component={Collection}  /> */}
         
+        <ProtectedRoute
+          redirectUrl='/login'
+          path='/info'
+          component={Info}        />
+
         <ProtectedRoute 
-          redirectUrl='/auth/login'
+          redirectUrl='/login'
+          path='/collection'
+          component={Collection}  />
+
+        <ProtectedRoute 
+          redirectUrl='/login'
+          path='/process'
+          component={Process}     />
+
+        <ProtectedRoute 
+          redirectUrl='/login'
+          path='/profile'
+          component={Profile}     />
+
+        <ProtectedRoute 
+          redirectUrl='/login'
           path="/auth/logout" 
-          component={Logout} />
+          component={Logout}      />
           
       </div>
     );

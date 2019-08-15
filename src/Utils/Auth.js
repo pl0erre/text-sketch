@@ -16,21 +16,22 @@ export default class Auth {
         data: qs.stringify({username, password}),
     })
     .then((response)=> {
-      this.setUser(response.data)
+      this.setUser(response.data);
     })
   }
 
-  signup({username, email, password, password_repeat}) {
+  signup({username, email, password}) {
+    debugger
     return axios({
         method: "POST",
         url: "/auth/signup",
         baseURL: this.domain,
         headers: { 'content-type': 'application/x-www-form-urlencoded' },
-        data: qs.stringify({username, email, password, password_repeat}),
+        data: qs.stringify({username, email, password}),
     })
     .then((response)=> {
       this.setUser(response.data);
-      this.props.history.push('/login');
+      this.props.history.push('/auth/login')
     })
   }
 
