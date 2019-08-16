@@ -50,12 +50,14 @@ export default class Login extends Component {
             <input  type="text" 
                     name="username" 
                     placeholder="Username"
-                    onChange={this.handleFormChange} />
+                    onChange={this.handleFormChange} 
+                    value={this.state.username} />
 
             <input  type="password" 
                     name="password" 
                     placeholder="Password"
-                    onChange={this.handleFormChange} />
+                    onChange={this.handleFormChange}
+                    value={this.state.password} />
 
             <input  type="submit" 
                     name="submit"

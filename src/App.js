@@ -9,7 +9,7 @@ import Login from './Pages/Login';
 import Signup from './Pages/Signup';
 import Info from './Pages/Info';
 import Profile from './Pages/Profile';
-import Process from './Pages/Process';
+import Task from './Pages/Task';
 import Collection from './Pages/Collection';
 
 // COMPONENTS
@@ -42,8 +42,8 @@ export default class App extends Component {
 
         <ProtectedRoute 
           redirectUrl='/login'
-          path='/process'
-          component={Process}     />
+          path='/task'
+          component={Task}     />
 
         <ProtectedRoute 
           redirectUrl='/login'

@@ -1,7 +1,10 @@
-import axios from "axios";
+import axios from "../Utils/Axios";
 import qs from "querystring";
+require('dotenv').config();
+
 
 export default class Auth {
+
   constructor(domain) {
     this.domain = domain || process.env.REACT_APP_API; //! change url when deploy
     this.login = this.login.bind(this);
@@ -14,7 +17,6 @@ export default class Auth {
         baseURL: this.domain,
         headers: { 'content-type': 'application/x-www-form-urlencoded' },
         data: qs.stringify({username, password}),
-        withCredentials: true, //!
     })
     .then((response)=> {
       this.setUser(response.data);
@@ -28,7 +30,6 @@ export default class Auth {
         baseURL: this.domain,
         headers: { 'content-type': 'application/x-www-form-urlencoded' },
         data: qs.stringify({username, email, password}),
-        withCredentials: true, //!
     })
     .then((response)=> {
       this.setUser(response.data);
@@ -53,7 +54,6 @@ export default class Auth {
     return axios({
         baseURL: this.domain,
         url: "/auth/logout",
-        withCredentials: true, //!
     })
     .then((res)=> {
         localStorage.removeItem('user');

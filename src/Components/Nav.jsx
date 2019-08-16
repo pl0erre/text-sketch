@@ -8,7 +8,7 @@ export default class Nav extends Component {
       <div className="App-Nav">
         <ul>
           <li><Link to="/info">Info</Link></li>
-          <li><Link to="/process">Process</Link></li>
+          <li><Link to="/task">New</Link></li>
           <li><Link to="/profile">Profile</Link></li>
         </ul>
       </div>
