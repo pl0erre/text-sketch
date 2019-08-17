@@ -6,6 +6,7 @@ export default class HomeLayout extends Component {
     return (
       <div className="App-HomeLayout">
         {this.props.children}
+        
       </div>
     )
   }

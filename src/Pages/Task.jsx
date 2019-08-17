@@ -59,8 +59,9 @@ handleProcessSubmit(event) {
                       placeholder="Number of sentences"
                       onChange={this.handleFormChange}
                       value={this.state.nr_sentences} />
-              <input  type="submit" 
-                      name="submit" />
+              <button type="submit" 
+                      name="submit"
+                      className="Submit-btn">Process text</button>
             </form>
           </div>
           <div className="bottom-bar">
@@ -86,8 +87,10 @@ handleProcessSubmit(event) {
               <form name="save-form">
                 <input  type="text" 
                         name="save-name" />
-                <input  type="submit" 
-                        name="submit" />
+                <button type="submit" 
+                        name="submit"
+                        placeholder=""
+                        className="Submit-btn">Save</button>
               </form>
               <Link to="/collection">My collection</Link>
             </div>

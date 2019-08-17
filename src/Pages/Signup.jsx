@@ -60,18 +60,21 @@ export default class Signup extends Component {
             <input  type="text" 
                     name="username" 
                     placeholder="Username" 
+                    required
                     value={this.state.user.username}
                     onChange={this.handleFormChange} />
 
             <input  type="email" 
                     name="email" 
                     placeholder="E-Mail"
+                    required
                     value={this.state.user.email}
                     onChange={this.handleFormChange} />
 
             <input  type="password" 
                     name="password" 
                     placeholder="Password"
+                    required
                     value={this.state.user.password}
                     onChange={this.handleFormChange} />
 
@@ -81,9 +84,9 @@ export default class Signup extends Component {
                     value={this.state.user.password_repeat}
                     onChange={this.handleFormChange} />
 
-            <input  type="submit" 
+            <button type="submit" 
                     name="submit"
-                    className="Submit-btn" />
+                    className="Submit-btn" >Sign up</button>
                     
           </form>
           <Link to="/login" type="button">Login</Link>

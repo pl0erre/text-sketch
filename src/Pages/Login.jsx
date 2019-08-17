@@ -46,23 +46,25 @@ export default class Login extends Component {
         <div className="App-Login" onSubmit={this.handleFormSubmit}>
           <h2>Login to start processing</h2>
           <form>
-
             <input  type="text" 
-                    name="username" 
-                    placeholder="Username"
-                    onChange={this.handleFormChange} 
-                    value={this.state.username} />
+                        name="username"
+                        placeholder="Enter your Username"
+                        required
+                        autoFocus
+                        onChange={this.handleFormChange} 
+                        value={this.state.username} />
 
             <input  type="password" 
-                    name="password" 
-                    placeholder="Password"
-                    onChange={this.handleFormChange}
-                    value={this.state.password} />
+                        name="password" 
+                        placeholder="Enter your Password"
+                        required
+                        label="Password"
+                        onChange={this.handleFormChange}
+                        value={this.state.password} />
 
-            <input  type="submit" 
-                    name="submit"
-                    className="Submit-btn" />
-
+            <button     type="submit" 
+                        name="submit"
+                        className="Submit-btn" >Login</button>
           </form>
           <Link to="/signup" type="button">Signup</Link>
         </div>

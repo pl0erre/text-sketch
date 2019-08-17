@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+html {
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
