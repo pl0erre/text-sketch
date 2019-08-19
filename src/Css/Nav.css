@@ -1,19 +1,21 @@
 .App-Nav {
-  max-width: 100vw;
+  height: 8vh;
   background-color: #2E7A83;
   margin: 0;
   padding: 0;
 }
 
 .App-Nav ul {
+  height: 100%;
   display: flex;
   flex-direction: row;
   list-style-type: none;
   justify-content: space-around;
+  align-items: center;
 }
 
 .App-Nav li {
-  margin: 0.5rem;
+  margin: 0.4rem;
 }
 
 .App-Nav a {

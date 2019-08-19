@@ -1,39 +1,27 @@
 import React, { Component } from 'react'
 import '../Css/Features.css';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 export default class Features extends Component {
   render() {
     return (
       <div className="App-Features">
-        <h2>Text sketch supports many awesome features</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,no sea takimata sanctus est Lorem ipsum dolor sit amet.
-          Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet,
-        </p>
-        <div className="features-container">
-          <div className="feature">
-            <h4>feature</h4>
-          </div>
-          <div className="feature">
-            <h4>feature</h4>
-          </div>
-          <div className="feature">
-            <h4>feature</h4>
-          </div>
-          <div className="feature">
-            <h4>feature</h4>
-          </div>
-          <div className="feature">
-            <h4>feature</h4>
-          </div>
-          <div className="feature">
-            <h4>feature</h4>
-          </div>
-          <div className="feature">
-            <h4>feature</h4>
-          </div>
-          <div className="feature">
-            <h4>feature</h4>
+        <div className="features-info">
+          <h2>Supported Features</h2>
+          <div className="features-container">
+            <div className="feature">
+              <h4>Summarization</h4>
+              <FontAwesomeIcon icon="book"/>
+            </div>
+            <div className="feature">
+              <h4>Classification</h4>
+              <FontAwesomeIcon icon="list-ul"/>
+            </div>
+            <div className="feature">
+              <h4>Language detection</h4>
+              <FontAwesomeIcon icon="globe-europe"/>
+            </div>
           </div>
         </div>
       </div>

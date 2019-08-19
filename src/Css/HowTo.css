@@ -1,20 +1,38 @@
 .App-HowTo {
-  height: 96vh;
+  height: 92vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-bottom: 3px solid darkgray;
+  text-align: left;
 }
 
 .App-HowTo h2 {
-  width: 50vw;
+  width: 100%;
   text-align: left;
   margin: 1rem 0;
   font-size: 2rem;
 }
 
 .App-HowTo p {
-  width: 50vw;
+  width: 100%;
   text-align: left;
+  padding: 1rem 0;
+}
+
+.howto-info {
+  padding: 1rem;
+  width: 90%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.109);
+  border-radius: 3px;
+}
+
+.howto-info ul {
+  list-style-position: inside;
 }

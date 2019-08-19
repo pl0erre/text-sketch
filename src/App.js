@@ -16,6 +16,12 @@ import Collection from './Pages/Collection';
 import ProtectedRoute from './Components/ProtectedRoute';
 import Logout from './Components/Logout';
 
+// FONT AWESOME
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faRobot, faBook, faListUl, faGlobeEurope } from '@fortawesome/free-solid-svg-icons';
+library.add(faRobot, faBook, faListUl, faGlobeEurope);
+
+
 export default class App extends Component {
 
   render(){
