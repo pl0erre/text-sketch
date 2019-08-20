@@ -3,8 +3,12 @@ import '../Css/Task.css';
 import MainLayout from '../Components/MainLayout';
 import {Link} from 'react-router-dom';
 
+// Utils
+import Save from "../Utils/Save";
 import Process from "../Utils/Process";
 const process = new Process();
+const save = new Save();
+
 
 export default class Task extends Component {
 
@@ -16,34 +20,47 @@ export default class Task extends Component {
       text_processed: '',
       languages: [],
       labels: [],
+      text_name: '',
       error: null
     }
 
     this.handleProcessSubmit = this.handleProcessSubmit.bind(this);
     this.handleFormChange = this.handleFormChange.bind(this);
-}
+    this.handleSaveSubmit = this.handleSaveSubmit.bind(this);
+  }
 
-handleFormChange(event) {
-  this.setState({
-    [event.target.name]: event.target.value
-  })
-}
-
-handleProcessSubmit(event) {
-  event.preventDefault(); 
-  process.getResult(this.state.text_url, this.state.nr_sentences)
-  .then((res) => {
+  handleFormChange(event) {
     this.setState({
-      text_processed:     res.data.summary, 
-      languages:          res.data.language,
-      labels:             res.data.classification
+      [event.target.name]: event.target.value
     })
-    //! get tags from Process.js
-  })
-  .catch((err) => {
-    this.setState({ error: err.message });
-  });
-}
+  }
+
+  handleProcessSubmit(event) {
+    event.preventDefault(); 
+    process.getResult(this.state.text_url, this.state.nr_sentences)
+    .then((res) => {
+      this.setState({
+        text_processed:     res.data.summary, 
+        languages:          res.data.language,
+        labels:             res.data.classification
+      })
+    })
+    .catch((err) => {
+      this.setState({ error: err.message });
+    });
+  }
+
+  handleSaveSubmit(event) {
+    event.preventDefault();
+    debugger
+    save.saveText(this.state.text_processed, this.state.languages, this.state.labels, this.state.text_name)
+    .then((res) => {
+      this.props.history.push('/collection')
+    })
+    .catch((err) => {
+      this.setState({ error: err.message })
+    })
+  }
 
   render() {
     return (
@@ -68,9 +85,14 @@ handleProcessSubmit(event) {
                       name="submit"
                       className="Submit-btn">Process text</button>
             </form>
-            <p className="process-description"> 
+            <p className="process-description">
+              <h2>Instructions</h2>
+              Copy the Url of the website you want to summarize.
+              Enter this Url and select the length of the summary being generated.
+              Hit "Process" and wait for the analysis being completed.
+              The result will be displayed below. This inncluding the classifications as well as the detected language with their relevances in percentage.
+
             </p> 
-            <div className="placeholder-div"></div>
           </div>
 
           <div className="bottom-bar">
@@ -103,12 +125,13 @@ handleProcessSubmit(event) {
 
             <div className="bottom-right">
               <h3>Save in collection</h3>
-              <form className="save-form" name="save-form">
+              <form className="save-form" name="save-form" onSubmit={this.handleSaveSubmit}>
                 <input  type="text" 
-                        name="save-name" />
+                        name="text_name"
+                        onChange={this.handleFormChange}
+                        value={this.state.text_name} />
                 <button type="submit" 
                         name="submit"
-                        placeholder=""
                         className="Submit-btn">Save</button>
               </form>
               <Link to="/collection">My collection</Link>

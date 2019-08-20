@@ -23,17 +23,16 @@ export default class Auth {
     })
   }
 
-  signup({username, email, password}) {
+  signup({username, email, password, id}) {
     return axios({
         method: "POST",
         url: "/auth/signup",
         baseURL: this.domain,
         headers: { 'content-type': 'application/x-www-form-urlencoded' },
-        data: qs.stringify({username, email, password}),
+        data: qs.stringify({username, email, password, id}),
     })
     .then((response)=> {
       this.setUser(response.data);
-      this.props.history.push('/auth/login')
     })
   }
 
@@ -55,7 +54,7 @@ export default class Auth {
         baseURL: this.domain,
         url: "/auth/logout",
     })
-    .then((res)=> {
+    .then((response)=> {
         localStorage.removeItem('user');
     })
   }    

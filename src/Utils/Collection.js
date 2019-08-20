@@ -4,25 +4,28 @@ require('dotenv').config();
 
 
 
-export default class Save  {
+export default class Collection  {
 
   constructor(domain) {
     this.domain = domain || process.env.REACT_APP_API; //! change url when deploy
   }
 
-  saveText(text_processed, languages, labels, text_name) {
-    let text = JSON.stringify({text_processed, languages, labels, text_name});
+  getCollection() {
     return axios({
       method: "POST",
-      url: "/text/save",
+      url: "/text/collection",
       baseURL: this.domain,
       headers: { 'content-type': 'application/x-www-form-urlencoded' },
-      data: qs.stringify({text}),
-    })
-    .then((response)=> {
-      response.status(200)
     })
   }
 
-  
+  getSingle(id) {
+    return axios({
+      method: "POST",
+      url: "/text/single",
+      baseURL: this.domain,
+      headers: { 'content-type': 'application/x-www-form-urlencoded' },
+    })
+  }
+
 }

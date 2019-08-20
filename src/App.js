@@ -10,7 +10,8 @@ import Signup from './Pages/Signup';
 import Info from './Pages/Info';
 import Profile from './Pages/Profile';
 import Task from './Pages/Task';
-import Collection from './Pages/Collection';
+import MyCollection from './Pages/MyCollection';
+import Details from './Pages/Details';
 
 // COMPONENTS
 import ProtectedRoute from './Components/ProtectedRoute';
@@ -44,7 +45,7 @@ export default class App extends Component {
         <ProtectedRoute 
           redirectUrl='/login'
           path='/collection'
-          component={Collection}  />
+          component={MyCollection}  />
 
         <ProtectedRoute 
           redirectUrl='/login'
@@ -60,6 +61,11 @@ export default class App extends Component {
           redirectUrl='/login'
           path="/auth/logout" 
           component={Logout}      />
+          
+        <ProtectedRoute 
+          redirectUrl='/login'
+          path="/details/:id" 
+          component={Details}      />
           
       </div>
     );
