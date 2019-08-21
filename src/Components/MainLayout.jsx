@@ -1,7 +1,12 @@
+// Basic
 import React, { Component } from 'react';
-import Nav from './Nav';
 import '../Css/MainLayout.css';
+
+// Components
+import Nav from './Nav';
 import Footer from './Footer';
+import Wrapper from './Wrapper';
+
 
 export default class MainLayout extends Component {
   
@@ -9,7 +14,9 @@ export default class MainLayout extends Component {
     return (
       <div className="App-MainLayout">
         <Nav />
-          {this.props.children}
+          <Wrapper>
+            {this.props.children}
+          </Wrapper>
         <Footer />
       </div>
     )

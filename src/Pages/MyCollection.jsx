@@ -1,11 +1,15 @@
+// Basic
 import React, { Component } from 'react';
-import MainLayout from '../Components/MainLayout';
 import {Link} from 'react-router-dom';
 import '../Css/MyCollection.css';
+
+// Components
+import MainLayout from '../Components/MainLayout';
+
+// Utils
 import Collection from "../Utils/Collection";
 const collection = new Collection();
 require('dotenv').config();
-
 
 
 export default class MyCollection extends Component {
@@ -31,22 +35,18 @@ export default class MyCollection extends Component {
   render() {
     return (
       <MainLayout>
-        <div className="App-Collection">
-          <h2>My Collection</h2>
-          <div className="collection-container">
-            {this.state.collection.map((text) => 
-              <div className="collection-item" key={text._id}>
-                <Link collection={this.state.collection} 
-                      to={{ pathname: `/details/` + text._id,
-                            state: {...text}}}> 
-                  <h4>{text.text_name}</h4> 
-                </Link> 
-                {text.labels.map((label) => <h5>{label.label}</h5>)}
-                {text.languages.map((language) => <h5>{language.name}</h5>)}
-              </div>   
-            )}
-          </div>
-        </div>
+        <h2>My Collection</h2>
+        {this.state.collection.map((text) => 
+          <div className="collection-item" key={text._id}>
+            <Link collection={this.state.collection} 
+                  to={{ pathname: `/details/` + text._id,
+                        state: {...text}}}> 
+              <h4>{text.text_name}</h4> 
+            </Link> 
+            {text.labels.map((label) => <h5>{label.label}</h5>)}
+            {text.languages.map((language) => <h5>{language.name}</h5>)}
+          </div>   
+        )}
       </MainLayout>
     )
   }

@@ -1,7 +1,11 @@
+// Basic
 import React, { Component } from 'react';
-import HomeLayout from '../Components/HomeLayout';
-import '../Css/Home.css';
 import {Link} from 'react-router-dom';
+import '../Css/Home.css';
+
+// Components
+import HomeLayout from '../Components/HomeLayout';
+
 
 export default class Home extends Component {
   render() {

@@ -1,7 +1,8 @@
-//components/ProtectedRoute
+//Basic
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 
+// Utils
 import Auth from "../Utils/Auth";
 const auth = new Auth();
 

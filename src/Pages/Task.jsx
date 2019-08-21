@@ -1,7 +1,10 @@
+// Basic
 import React, { Component } from 'react'
-import '../Css/Task.css';
-import MainLayout from '../Components/MainLayout';
 import {Link} from 'react-router-dom';
+import '../Css/Task.css';
+
+// Components
+import MainLayout from '../Components/MainLayout';
 
 // Utils
 import Save from "../Utils/Save";
@@ -52,7 +55,11 @@ export default class Task extends Component {
 
   handleSaveSubmit(event) {
     event.preventDefault();
-    save.saveText(this.state.text_processed, this.state.languages, this.state.labels, this.state.text_name)
+    save.saveText(this.state.text_processed, 
+                  this.state.languages, 
+                  this.state.labels, 
+                  this.state.text_name
+    )
     .then(() => {
       this.props.history.push('/collection')
     })
@@ -64,79 +71,74 @@ export default class Task extends Component {
   render() {
     return (
 
-      <MainLayout>
-        <div className="App-Task">
+      <MainLayout>          
+        <div className="top-bar">
+          <form className="process-form" name="process-form" onSubmit={this.handleProcessSubmit}>
+            <input  type="text" 
+                    name="text_url" 
+                    placeholder="http://"
+                    onChange={this.handleFormChange}
+                    value={this.state.text_url} />
+            <input  type="number"
+                    name="nr_sentences"
+                    placeholder="Number of sentences"
+                    onChange={this.handleFormChange}
+                    value={this.state.nr_sentences} />
+            <button type="submit" 
+                    name="submit"
+                    className="Submit-btn">Process text</button>
+          </form>
+          <p className="process-description">
+            <h2>Instructions</h2>
+            Copy the Url of the website you want to summarize.
+            Enter this Url and select the length of the summary being generated.
+            Hit "Process" and wait for the analysis being completed.
+            The result will be displayed below. 
+            This inncluding the classifications as well as the detected language with their relevances in percentage.
+          </p> 
+        </div>
+
+        <div className="bottom-bar">
+          <div className="bottom-left">
+            <p name="text_processed" placeholder="Your result" >
+              {this.state.text_processed}
+            </p>
+          </div>
+          <div className="bottom-middle">             
+            <div className="labels">
+              <h3>Classifications</h3>
+              {this.state.labels.map((label) =>
+                <div className="label-item">
+                  <h4>{label.label}</h4>
+                  <h4>Relevance: {label.relevance}</h4>
+                </div>
+              )}
+            </div>
+            <div className="languages">
+              <h3>Languages: </h3>
+              {this.state.languages.map((language) => 
+                <div className="language-item">
+                  <h4>{language.name}</h4>
+                  <h4>Relevance: {language.relevance}</h4>
+                </div>
+              )}
+            </div>
+          </div>
           
-          <div className="top-bar">
-            <form className="process-form" name="process-form" onSubmit={this.handleProcessSubmit}>
+          <div className="bottom-right">
+            <h3>Save in collection</h3>
+            <form className="save-form" name="save-form" onSubmit={this.handleSaveSubmit}>
               <input  type="text" 
-                      name="text_url" 
-                      placeholder="http://"
+                      name="text_name"
                       onChange={this.handleFormChange}
-                      value={this.state.text_url} />
-              <input  type="number"
-                      name="nr_sentences"
-                      placeholder="Number of sentences"
-                      onChange={this.handleFormChange}
-                      value={this.state.nr_sentences} />
-              
+                      value={this.state.text_name} />
               <button type="submit" 
                       name="submit"
-                      className="Submit-btn">Process text</button>
+                      className="Submit-btn">Save</button>
             </form>
-            <p className="process-description">
-              <h2>Instructions</h2>
-              Copy the Url of the website you want to summarize.
-              Enter this Url and select the length of the summary being generated.
-              Hit "Process" and wait for the analysis being completed.
-              The result will be displayed below. This inncluding the classifications as well as the detected language with their relevances in percentage.
-
-            </p> 
+            <Link to="/collection">My collection</Link>
           </div>
-
-          <div className="bottom-bar">
-            <div className="bottom-left">
-              <p name="text_processed" placeholder="Your result" >
-                {this.state.text_processed}
-              </p>
-            </div>
-            <div className="bottom-middle">             
-              <div className="labels">
-                <h3>Classifications</h3>
-                {this.state.labels.map((label) =>
-                  <div className="label-item">
-                    <h4>{label.label}</h4>
-                    <h4>Relevance: {label.relevance}</h4>
-                  </div>
-                )}
-              </div>
-              <div className="languages">
-                <h3>Languages: </h3>
-                {this.state.languages.map((language) => 
-                  <div className="language-item">
-                    <h4>{language.name}</h4>
-                    <h4>Relevance: {language.relevance}</h4>
-                  </div>
-                )}
-              </div>
-              
-            </div>
-
-            <div className="bottom-right">
-              <h3>Save in collection</h3>
-              <form className="save-form" name="save-form" onSubmit={this.handleSaveSubmit}>
-                <input  type="text" 
-                        name="text_name"
-                        onChange={this.handleFormChange}
-                        value={this.state.text_name} />
-                <button type="submit" 
-                        name="submit"
-                        className="Submit-btn">Save</button>
-              </form>
-              <Link to="/collection">My collection</Link>
-            </div>
-            
-          </div>
+          
         </div>
       </MainLayout>
       

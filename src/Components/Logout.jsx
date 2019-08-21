@@ -1,7 +1,11 @@
+// Basic
 import React, { Component } from 'react';
 import '../Css/Logout.css';
+
+// Components
 import Nav from '../Components/Nav';
 
+// Utils
 import Auth from "../Utils/Auth";
 const auth = new Auth();
 

@@ -1,8 +1,12 @@
+// Basic
 import React, { Component } from 'react';
-import HomeLayout from '../Components/HomeLayout';
-import '../Css/Login.css';
 import {Link} from 'react-router-dom';
+import '../Css/Login.css';
 
+// Components
+import HomeLayout from '../Components/HomeLayout';
+
+// Utils
 import Auth from "../Utils/Auth";
 const auth = new Auth();
 
@@ -32,7 +36,7 @@ export default class Login extends Component {
     auth.login(this.state.username, this.state.password)
     .then(() => {
       this.setState({ error: "" });
-      this.props.history.push('/profile')
+      this.props.history.push('/info')
     })
     .catch((err) => {
       this.setState({ error: err.message });

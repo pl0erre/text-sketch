@@ -1,24 +1,11 @@
 .App-Nav {
-  height: 8vh;
-  background-color: #2E7A83;
-  margin: 0;
-  padding: 0;
+
 }
 
-.App-Nav ul {
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  list-style-type: none;
-  justify-content: space-between;
-  align-items: center;
+.nav-wrapper .brand-logo  {
+  font-size: 4rem;
 }
 
-.App-Nav li {
-  margin: 0 2rem;
-}
-
-.App-Nav a {
-  text-decoration: none;
-  color: white;
+.nav-wrapper a {
+  font-size: 1.3rem;
 }

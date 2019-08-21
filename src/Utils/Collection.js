@@ -1,7 +1,5 @@
 import axios from "../Utils/Axios";
-import qs from "querystring";
 require('dotenv').config();
-
 
 
 export default class Collection  {

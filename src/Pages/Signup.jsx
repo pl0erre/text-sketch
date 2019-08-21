@@ -1,10 +1,15 @@
+// Basic
 import React, { Component } from 'react';
-import HomeLayout from '../Components/HomeLayout';
-import '../Css/Signup.css';
 import {Link} from 'react-router-dom';
+import '../Css/Signup.css';
 
+// Components
+import HomeLayout from '../Components/HomeLayout';
+
+// Utils
 import Auth from "../Utils/Auth";
 const auth = new Auth();
+
 
 export default class Signup extends Component {
 
@@ -38,7 +43,6 @@ export default class Signup extends Component {
         this.setState({ error: err.message });
       });
     }
-    
   };
 
   handleFormChange(event) {

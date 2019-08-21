@@ -1,10 +1,11 @@
+// Basic
 import React, { Component } from 'react';
 import '../Css/HowTo.css';
+
 
 export default class HowTo extends Component {
   render() {
     return (
-      <div className="App-HowTo">
         <div className="howto-info">
           <h2>Summarize any text in no time</h2>
           <p>Just follow these steps to get your summary:</p>
@@ -17,7 +18,6 @@ export default class HowTo extends Component {
           </ul>
           <p>The only thing we connot do for you is reading the summary</p>
         </div>
-      </div>
     )
   }
 }

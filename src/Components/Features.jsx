@@ -1,12 +1,14 @@
+// Basic
 import React, { Component } from 'react'
 import '../Css/Features.css';
 
+// Font Awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 export default class Features extends Component {
   render() {
     return (
-      <div className="App-Features">
         <div className="features-info">
           <h2>Supported Features</h2>
           <div className="features-container">
@@ -24,7 +26,6 @@ export default class Features extends Component {
             </div>
           </div>
         </div>
-      </div>
     )
   }
 }

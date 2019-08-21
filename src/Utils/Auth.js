@@ -54,7 +54,7 @@ export default class Auth {
         baseURL: this.domain,
         url: "/auth/logout",
     })
-    .then((response)=> {
+    .then(()=> {
         localStorage.removeItem('user');
     })
   }    
