@@ -20,7 +20,7 @@ export default class Save  {
       data: qs.stringify({text}),
     })
     .then((response)=> {
-      response.status(200)
+      // response.status(200)
     })
   }
 

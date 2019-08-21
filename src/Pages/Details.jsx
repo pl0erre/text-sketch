@@ -25,7 +25,7 @@ export default class Details extends Component {
     collection.deleteText(this.props.location.state._id)
     .then(() => {
       debugger
-
+      this.props.history.push('/collection')
     })
     .catch((err) => {
       this.setState({ error: err.message })
