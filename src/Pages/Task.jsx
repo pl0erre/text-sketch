@@ -52,9 +52,8 @@ export default class Task extends Component {
 
   handleSaveSubmit(event) {
     event.preventDefault();
-    debugger
     save.saveText(this.state.text_processed, this.state.languages, this.state.labels, this.state.text_name)
-    .then((res) => {
+    .then(() => {
       this.props.history.push('/collection')
     })
     .catch((err) => {

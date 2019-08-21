@@ -19,13 +19,16 @@ export default class Collection  {
     })
   }
 
-  getSingle(id) {
+  deleteText(id) {
     return axios({
       method: "POST",
-      url: "/text/single",
+      url: `/text/delete/${id}`,
       baseURL: this.domain,
       headers: { 'content-type': 'application/x-www-form-urlencoded' },
     })
   }
 
 }
+
+
+

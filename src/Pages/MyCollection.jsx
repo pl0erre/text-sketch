@@ -35,8 +35,12 @@ export default class MyCollection extends Component {
           <h2>My Collection</h2>
           <div className="collection-container">
             {this.state.collection.map((text) => 
-              <div className="collection-item">
-                <Link id={text._id} to={`/details/${text._id}`}> <h4>{text.text_name}</h4> </Link> 
+              <div className="collection-item" key={text._id}>
+                <Link collection={this.state.collection} 
+                      to={{ pathname: `/details/` + text._id,
+                            state: {...text}}}> 
+                  <h4>{text.text_name}</h4> 
+                </Link> 
                 {text.labels.map((label) => <h5>{label.label}</h5>)}
                 {text.languages.map((language) => <h5>{language.name}</h5>)}
               </div>   
@@ -47,3 +51,11 @@ export default class MyCollection extends Component {
     )
   }
 }
+
+
+// <Link 
+//           beers={this.props.beers} 
+//           to={{ pathname: "/details/" + this.props.beer._id, 
+//                 state: {beer: this.props.beer}}}>
+//           Details
+//         </Link>
