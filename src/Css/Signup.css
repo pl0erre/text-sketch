@@ -27,7 +27,7 @@
   padding: 0 0.5rem;
 }
 
-.Submit-btn {
+/* .Submit-btn {
   height: 28px;
   width: 100%;
   margin-top: 1rem;
@@ -38,7 +38,7 @@
 
 .Submit-btn:hover {
   background-color: rgb(229, 255, 0);
-}
+} */
 
 .App-Signup a {
   color: rgb(160, 181, 68);

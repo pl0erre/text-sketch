@@ -5,7 +5,7 @@ import '../Css/Home.css';
 
 // Components
 import HomeLayout from '../Components/HomeLayout';
-
+import {Button} from 'react-materialize';
 
 export default class Home extends Component {
   render() {
@@ -14,7 +14,7 @@ export default class Home extends Component {
       <HomeLayout>
         <div className="App-Home">
           <h1>Welcome to Text Sketch</h1>
-          <Link to="/login" type="button">Get started</Link>
+          <Button className="btn-large lime teal-text text-darken-3" node="a" href="/login">Get started</Button>
         </div>
       </HomeLayout> 
       

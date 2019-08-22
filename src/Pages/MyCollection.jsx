@@ -49,7 +49,6 @@ export default class MyCollection extends Component {
                   </Link> 
                   
                 ]}>
-            
             {text.labels.map((label) => <Chip>{label.label}</Chip>)}
             {text.languages.map((language) => <Chip>{language.name}</Chip>)}
           </Card>   

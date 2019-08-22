@@ -5,6 +5,7 @@ import '../Css/Task.css';
 
 // Components
 import MainLayout from '../Components/MainLayout';
+import {Card, CardPanel, Chip, TextInput, Range, Button} from 'react-materialize';
 
 // Utils
 import Save from "../Utils/Save";
@@ -20,7 +21,7 @@ export default class Task extends Component {
     this.state = { 
       text_url: '',
       nr_sentences: '',
-      text_processed: '',
+      text_processed: 'Your Processed Text goes here',
       languages: [],
       labels: [],
       text_name: '',
@@ -71,75 +72,84 @@ export default class Task extends Component {
   render() {
     return (
 
-      <MainLayout>          
-        <div className="top-bar">
-          <form className="process-form" name="process-form" onSubmit={this.handleProcessSubmit}>
-            <input  type="text" 
-                    name="text_url" 
-                    placeholder="http://"
-                    onChange={this.handleFormChange}
-                    value={this.state.text_url} />
-            <input  type="number"
-                    name="nr_sentences"
-                    placeholder="Number of sentences"
-                    onChange={this.handleFormChange}
-                    value={this.state.nr_sentences} />
-            <button type="submit" 
-                    name="submit"
-                    className="Submit-btn">Process text</button>
-          </form>
-          <p className="process-description">
-            <h2>Instructions</h2>
-            Copy the Url of the website you want to summarize.
-            Enter this Url and select the length of the summary being generated.
-            Hit "Process" and wait for the analysis being completed.
-            The result will be displayed below. 
-            This inncluding the classifications as well as the detected language with their relevances in percentage.
-          </p> 
-        </div>
+      <MainLayout>
+        <CardPanel className="App-Task blue-grey lighten-3">
+          <div className="left-bar">
+            <Card className="">     
+              <form className="process-form" name="process-form" onSubmit={this.handleProcessSubmit}>
+                <TextInput  type="text" 
+                            name="text_url" 
+                            label="Enter URL"
+                            onChange={this.handleFormChange}
+                            value={this.state.text_url} />
+                <label  htmlFor="nr_sentences"
+                        className="teal-text">Number of sentences</label>
+                <Range  name="nr_sentences"
+                        min="1"
+                        max="20"
+                        onChange={this.handleFormChange}
+                        value={this.state.nr_sentences} />
+                <Button type="submit" 
+                        name="submit"
+                        className="lime teal-text text-darken-3">Process text</Button>
+              </form>
+            </Card>
+            <Card>
 
-        <div className="bottom-bar">
-          <div className="bottom-left">
-            <p name="text_processed" placeholder="Your result" >
-              {this.state.text_processed}
-            </p>
-          </div>
-          <div className="bottom-middle">             
-            <div className="labels">
-              <h3>Classifications</h3>
-              {this.state.labels.map((label) =>
-                <div className="label-item">
-                  <h4>{label.label}</h4>
-                  <h4>Relevance: {label.relevance}</h4>
-                </div>
-              )}
-            </div>
-            <div className="languages">
-              <h3>Languages: </h3>
-              {this.state.languages.map((language) => 
-                <div className="language-item">
-                  <h4>{language.name}</h4>
-                  <h4>Relevance: {language.relevance}</h4>
-                </div>
-              )}
-            </div>
-          </div>
+              <div className="labels">
+                {this.state.labels.map((label) =>
+                  <div className="label-item">
+                    <Chip><img src="/tag-icon.png" alt="tag-icon"/>{label.label} <span className="orange-text text-darken-4">{label.relevance}</span></Chip>
+                  </div>
+                )}
+              </div>
+
+              <div className="languages">
+                {this.state.languages.map((language) => 
+                  <div className="language-item">
+                    <Chip><img src="/lang-icon-2.png" alt="lang-icon"/>{language.name} <span className="orange-text text-darken-4">{language.relevance}</span></Chip>
+                  </div>
+                )}
+              </div>
+
+            </Card>
           
-          <div className="bottom-right">
-            <h3>Save in collection</h3>
-            <form className="save-form" name="save-form" onSubmit={this.handleSaveSubmit}>
-              <input  type="text" 
-                      name="text_name"
-                      onChange={this.handleFormChange}
-                      value={this.state.text_name} />
-              <button type="submit" 
-                      name="submit"
-                      className="Submit-btn">Save</button>
-            </form>
-            <Link to="/collection">My collection</Link>
-          </div>
+            <Card>
+              <h3>Add to collection</h3>
+              <form className="save-form" name="save-form" onSubmit={this.handleSaveSubmit}>
+                <TextInput  type="text" 
+                        name="text_name"
+                        label="Name"
+                        onChange={this.handleFormChange}
+                        value={this.state.text_name} />
+                <Button type="submit" 
+                        name="submit"
+                        className="lime teal-text text-darken-3">Save</Button>
+              </form>
+            </Card>
           
-        </div>
+          </div> 
+          
+          
+          <div className="right-bar">
+            <Card className="process-info">
+              <h3>Instructions</h3>
+              <p className="process-description">
+                Copy the Url of the website you want to summarize.
+                Enter this Url and select the length of the summary being generated.
+                Hit "Process" and wait for the analysis being completed.
+                The result will be displayed below. 
+                This inncluding the classifications as well as the detected language with their relevances in percentage.
+              </p>
+            </Card> 
+
+            <Card className="bottom-left">
+              <p name="text_processed" className="text_processed teal-text text-darken-3  " >
+                {this.state.text_processed}
+              </p>
+            </Card>
+          </div>
+        </CardPanel>
       </MainLayout>
       
     )

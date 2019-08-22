@@ -16,7 +16,7 @@ export default class Nav extends Component {
                   <li><NavItem href="/Collection">Collection</NavItem></li>
                   <li><NavItem href="/Profile">Profile</NavItem></li>
                 </>
-                }>
+              }>
         <NavItem className="nav-item lime-text" href="/Info">
           Info
         </NavItem>

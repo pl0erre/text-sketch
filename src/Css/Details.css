@@ -1,7 +1,8 @@
 .App-Details {
-  min-height: 95vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+ width: 70%;
+
+}
+
+.details-info {
+  text-align: left
 }

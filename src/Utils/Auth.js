@@ -6,7 +6,7 @@ require('dotenv').config();
 export default class Auth {
 
   constructor(domain) {
-    this.domain = domain || process.env.REACT_APP_API; //! change url when deploy
+    this.domain = domain || process.env.REACT_APP_API;
     this.login = this.login.bind(this);
   }
 

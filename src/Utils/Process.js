@@ -6,7 +6,7 @@ require('dotenv').config();
 export default class Process {
   
   constructor(domain) {
-    this.domain = domain || process.env.REACT_APP_API; //! change url when deploy
+    this.domain = domain || process.env.REACT_APP_API;
   }
 
   getResult(text_url, nr_sentences) {

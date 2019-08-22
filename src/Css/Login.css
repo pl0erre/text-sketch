@@ -27,7 +27,7 @@
   border: 1px solid darkgray;
   padding: 0 0.5rem;
 }
-
+/* 
 .Submit-btn {
   height: 28px;
   width: 100%;
@@ -35,11 +35,11 @@
   background-color: yellow;
   border: none;
   border: 1px solid darkgray;
-}
+} */
 
-.Submit-btn :hover {
+/* .Submit-btn :hover {
   background-color: rgb(163, 163, 0);
-}
+} */
 
 .App-Login a {
   color: rgb(160, 181, 68);

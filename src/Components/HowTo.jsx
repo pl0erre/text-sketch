@@ -10,7 +10,7 @@ export default class HowTo extends Component {
         <div className="App-HowTo">
           <CardPanel className="How-To-Wrapper grey darken-3 white-text">
             <h2>Summarize any text in no time</h2>
-            <CardPanel className="How-To-container">
+            <CardPanel className="How-To-container blue-grey lighten-3">
               <ul>
                 <Card className="How-To-item item-one" horizontal><li>Copy Url</li></Card>
                 <Card className="How-To-item item-two" horizontal><li>Paste in</li></Card>
