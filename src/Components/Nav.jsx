@@ -1,23 +1,32 @@
 import React, { Component } from 'react'
-// import {Link} from 'react-router-dom';
 import '../Css/Nav.css';
+
+import {Navbar, NavItem } from 'react-materialize';
 
 
 export default class Nav extends Component {
   render() {
     return (
-      <div className="App-Nav">
-        <nav className="teal darken-3">
-          <div className="nav-wrapper">
-            <a href="/task" className="brand-logo left lime-text">+</a>
-            <ul id="nav-mobile" className="right">
-              <li><a href="/info" className="lime-text">Info</a></li>
-              <li><a href="/collection" className="lime-text">Collection</a></li>
-              <li><a href="/profile" className="lime-text">Profile</a></li>
-            </ul>
-          </div>
-        </nav>
-      </div>
+      <Navbar className="nav-bar teal darken-3" 
+              brand={<a href="/task" className="lime-text"><span className="nav-plus" >+</span></a>} 
+              alignLinks="right" 
+              sidenav={
+                <>
+                  <li><NavItem href="/Info">Info</NavItem></li>
+                  <li><NavItem href="/Collection">Collection</NavItem></li>
+                  <li><NavItem href="/Profile">Profile</NavItem></li>
+                </>
+                }>
+        <NavItem className="nav-item lime-text" href="/Info">
+          Info
+        </NavItem>
+        <NavItem className="nav-item lime-text"  href="/Collection">
+          Collection
+        </NavItem>
+        <NavItem  className="nav-item lime-text" href="/Profile">
+          Profile
+        </NavItem>
+      </Navbar> 
     )
   }
 }

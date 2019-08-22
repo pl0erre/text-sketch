@@ -1,11 +1,11 @@
-.App-Nav {
-
+.nav-bar {
+  color: lime;
 }
 
-.nav-wrapper .brand-logo  {
-  font-size: 4rem;
-}
-
-.nav-wrapper a {
+.nav-item {
   font-size: 1.3rem;
+}
+
+.nav-plus {
+  font-size: 4rem;
 }

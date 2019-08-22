@@ -1,25 +1,11 @@
-.App-Collection {
-    min-height: 95vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.collection-container {
-    width: 95%;
-    height: 100%;
-    /* border: 1px solid    black; */
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+.collection-heading {
+    
 }
 
 .collection-item {
     max-height: 30%;
     min-width: 300px;
     width: 50%;
-    border: 1px solid green;
     margin: 1rem 0;
+    text-align: left
 }

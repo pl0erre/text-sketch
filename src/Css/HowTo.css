@@ -1,38 +1,56 @@
 .App-HowTo {
-  height: 92vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  border-bottom: 3px solid darkgray;
-  text-align: left;
+  width: 60%;
+  min-width: 320px;
+  min-height: 95vh;
+
 }
 
-.App-HowTo h2 {
-  width: 100%;
-  text-align: left;
-  margin: 1rem 0;
-  font-size: 2rem;
+.How-To-Wrapper {
+  background-color: rgb(128, 126, 126);
 }
 
-.App-HowTo p {
-  width: 100%;
-  text-align: left;
-  padding: 1rem 0;
+
+.How-To-item{
+  width: 30vw;
+  min-width: 250px;
 }
 
-.howto-info {
-  padding: 1rem;
-  width: 90%;
-  height: 80%;
+.How-To-container {
   display: flex;
-  flex-direction: column;
-  justify-content:flex-start;
-  box-sizing: border-box;
-  background-color: rgba(255, 255, 255, 0.109);
-  border-radius: 3px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgb(46, 106, 92);
+  /* background-image: url("https://images.unsplash.com/photo-1493606278519-11aa9f86e40a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"); */
+  background-size: center;
+  background-repeat: no-repeat;
+
 }
 
-.howto-info ul {
-  list-style-position: inside;
+.item-one {
+  background-color: #DDF8E8;
+  color: #424242
+}
+
+.item-two {
+  background-color: #CDD5D1;
+  color: #504f4f
+}
+
+.item-three {
+  background-color: #B4A6AB;
+  color: #525050
+}
+
+.item-four {
+  background-color: #946E83;
+  color: #b8b6b6
+}
+
+.item-five {
+  background-color: #615055;
+  color: #cecbcb
 }

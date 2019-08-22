@@ -5,6 +5,8 @@ import '../Css/MyCollection.css';
 
 // Components
 import MainLayout from '../Components/MainLayout';
+import {Chip} from 'react-materialize';
+import {Card} from 'react-materialize';
 
 // Utils
 import Collection from "../Utils/Collection";
@@ -35,27 +37,24 @@ export default class MyCollection extends Component {
   render() {
     return (
       <MainLayout>
-        <h2>My Collection</h2>
+        <h2 className="blue-grey-text text-lighten-5">My Collection</h2>
         {this.state.collection.map((text) => 
-          <div className="collection-item" key={text._id}>
-            <Link collection={this.state.collection} 
-                  to={{ pathname: `/details/` + text._id,
-                        state: {...text}}}> 
-              <h4>{text.text_name}</h4> 
-            </Link> 
-            {text.labels.map((label) => <h5>{label.label}</h5>)}
-            {text.languages.map((language) => <h5>{language.name}</h5>)}
-          </div>   
+          <Card className="collection-item hoverable blue-grey lighten-3" 
+                key={text._id}
+                title={text.text_name}
+                actions={[
+                  <Link collection={this.state.collection} 
+                        to={{ pathname: `/details/` + text._id,state: {...text}}}>
+                          <a href="/"><span className="teal-text text-darken-3">Details</span></a>
+                  </Link> 
+                  
+                ]}>
+            
+            {text.labels.map((label) => <Chip>{label.label}</Chip>)}
+            {text.languages.map((language) => <Chip>{language.name}</Chip>)}
+          </Card>   
         )}
       </MainLayout>
     )
   }
 }
-
-
-// <Link 
-//           beers={this.props.beers} 
-//           to={{ pathname: "/details/" + this.props.beer._id, 
-//                 state: {beer: this.props.beer}}}>
-//           Details
-//         </Link>
