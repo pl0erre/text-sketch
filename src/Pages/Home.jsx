@@ -15,6 +15,7 @@ export default class Home extends Component {
         <div className="App-Home">
           <h1>Welcome to Text Sketch</h1>
           <Button className="btn-large lime teal-text text-darken-3" node="a" href="/login">Get started</Button>
+          <Link to="/login">Login</Link>
         </div>
       </HomeLayout> 
       
