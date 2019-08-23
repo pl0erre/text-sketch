@@ -37,7 +37,7 @@ export default class MyCollection extends Component {
   render() {
     return (
       <MainLayout>
-        <h2 className="blue-grey-text text-lighten-5">My Collection</h2>
+        <h2 className="blue-grey-text text-darken-2">My Collection</h2>
         {this.state.collection.map((text) => 
           <Card className="collection-item hoverable blue-grey lighten-3" 
                 key={text._id}

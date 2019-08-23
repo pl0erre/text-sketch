@@ -9,16 +9,16 @@ export default class Footer extends Component {
           <div class="container">
             <div class="row">
               <div class="col l2 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                <h5 class="white-text">Hey you!</h5>
+                <p class="grey-text text-lighten-4">Thanks for visiting my page. If you find any bugs, you can either keep them or contact me on github. </p>
               </div>
               <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
+                <h5 class="white-text">More awesome websites!</h5>
                 <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://yetris.netlify.com/">Yetris</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://herbdb.herokuapp.com/">HerbDB</a></li>
+                  {/* <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li> */}
                 </ul>
               </div>
             </div>
