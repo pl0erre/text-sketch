@@ -1,4 +1,5 @@
-import axios from "../Utils/Axios";
+// import axios from "../Utils/Axios";
+import axios from "axios";
 // import Auth from "./Auth";
 require('dotenv').config();
 

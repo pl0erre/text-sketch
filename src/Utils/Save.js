@@ -1,4 +1,5 @@
-import axios from "../Utils/Axios";
+// import axios from "../Utils/Axios";
+import axios from "axios";
 import qs from "querystring";
 require('dotenv').config();
 
