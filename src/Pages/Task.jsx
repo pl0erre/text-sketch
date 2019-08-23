@@ -21,7 +21,7 @@ export default class Task extends Component {
     this.state = { 
       text_url: '',
       nr_sentences: '',
-      text_processed: 'Your processed text goes here ..',
+      text_processed: 'Your processed text goes here ...',
       languages: [],
       labels: [],
       text_name: '',

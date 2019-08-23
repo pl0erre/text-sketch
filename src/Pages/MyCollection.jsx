@@ -49,8 +49,21 @@ export default class MyCollection extends Component {
                   </Link> 
                   
                 ]}>
-            {text.labels.map((label) => <Chip>{label.label}</Chip>)}
-            {text.languages.map((language) => <Chip>{language.name}</Chip>)}
+                <div className="labels">
+                  {text.labels.map((label) =>
+                    <div className="label-item">
+                      <Chip><img src="/tag-icon.png" alt="tag-icon"/>{label.label} <span className="orange-text text-darken-4">{label.relevance}</span></Chip>
+                    </div>
+                  )}
+                </div>
+
+                <div className="languages">
+                  {text.languages.map((language) => 
+                    <div className="language-item">
+                      <Chip><img src="/lang-icon-2.png" alt="lang-icon"/>{language.name} <span className="orange-text text-darken-4">{language.relevance}</span></Chip>
+                    </div>
+                  )}
+                </div>
           </Card>   
         )}
       </MainLayout>

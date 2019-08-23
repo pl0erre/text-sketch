@@ -40,7 +40,7 @@ export default class Details extends Component {
 
     return (
       <MainLayout>
-        <CardPanel className="App-Details">
+        <CardPanel className="App-Details  blue-grey lighten-3">
           <Card className="details-info">
             <h3>{this.props.location.state.text_name}</h3>
             <p>{this.props.location.state.text_processed}</p>
@@ -63,7 +63,7 @@ export default class Details extends Component {
               )}
             </div>
           </Card>
-          <Card>
+          <div className="button-container">
             <form className="delete-form" 
               name="delete-form"
               onSubmit={this.handleDelete}>
@@ -72,8 +72,9 @@ export default class Details extends Component {
                       name="submit"
                       className="deep-orange darken-4">Delete</Button>
             </form>
-          </Card>
-          <Button waves="light" node="a" href="/collection">Collection</Button>
+            <Button waves="light" node="a" href="/collection">Collection</Button>
+          </div>
+          
         </CardPanel>
       </MainLayout>
       

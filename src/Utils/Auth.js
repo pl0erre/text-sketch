@@ -7,10 +7,13 @@ export default class Auth {
 
   constructor(domain) {
     this.domain = domain || process.env.REACT_APP_API;
+    // this.domain = domain || "http://localhost:3001";
+
     this.login = this.login.bind(this);
   }
 
   login(username, password) {
+    debugger
     return axios({
         method: "POST",
         url: "/auth/login",

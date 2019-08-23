@@ -7,6 +7,7 @@ export default class Collection  {
 
   constructor(domain) {
     this.domain = domain || process.env.REACT_APP_API;
+    // this.domain = domain || "http://localhost:3001";
     // this.session = new Auth();
   }
 
