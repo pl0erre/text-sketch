@@ -1,9 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700&display=swap');
+
 .App-HomeLayout {
   height: 100vh;
   width: 100vw;
+  font-family: Roboto Slab;
   background-image: url(/LW001.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
-
+.App-HomeLayout p, ul, h4 {
+  font-family: Roboto;
+  font-size: 1rem;
+}
 

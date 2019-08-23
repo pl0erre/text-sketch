@@ -13,7 +13,7 @@ export default class Home extends Component {
 
       <HomeLayout>
         <div className="App-Home">
-          <h1>Welcome to Text Sketch</h1>
+          <h1 className="grey-text text-darken-2">Welcome to Text Sketch</h1>
           <Button className="btn-large lime teal-text text-darken-3 pulse" node="a" href="/login">Get started</Button>
           {/* <Link to="/login">Login</Link> */}
         </div>

@@ -5,6 +5,7 @@ import '../Css/Signup.css';
 
 // Components
 import HomeLayout from '../Components/HomeLayout';
+import {Card, TextInput, Button} from 'react-materialize';
 
 // Utils
 import Auth from "../Utils/Auth";
@@ -58,42 +59,42 @@ export default class Signup extends Component {
 
       <HomeLayout>
         <div className="App-Signup">
-        <h2>Signup to get started</h2>
+        <h2 className="grey-text text-darken-2">Signup to get started</h2>
+        <Card>
           <form onSubmit={this.handleFormSubmit}>
-
-            <input  type="text" 
+            <TextInput  type="text" 
                     name="username" 
-                    placeholder="Username" 
+                    label="Username" 
                     required
                     value={this.state.user.username}
                     onChange={this.handleFormChange} />
 
-            <input  type="email" 
+            <TextInput type="email" 
                     name="email" 
-                    placeholder="E-Mail"
+                    label="E-Mail"
                     required
                     value={this.state.user.email}
                     onChange={this.handleFormChange} />
 
-            <input  type="password" 
+            <TextInput  type="password" 
                     name="password" 
-                    placeholder="Password"
+                    label="Password"
                     required
                     value={this.state.user.password}
                     onChange={this.handleFormChange} />
 
-            <input  type="password" 
+            <TextInput  type="password" 
                     name="password_repeat" 
-                    placeholder="Repeat Password"
+                    label="Repeat Password"
                     value={this.state.user.password_repeat}
                     onChange={this.handleFormChange} />
 
-            <button type="submit" 
+            <Button type="submit" 
                     name="submit"
-                    className="Submit-btn" >Sign up</button>
-                    
+                    className="Submit-btn lime  grey-text text-darken-3">Go for it!</Button>      
           </form>
-          <Link to="/login" type="button">Login</Link>
+        </Card>
+          <Link to="/login">Login</Link>
         </div> 
       </HomeLayout>
       

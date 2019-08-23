@@ -17,8 +17,7 @@ export default class Footer extends Component {
                 <ul>
                   <li><a class="grey-text text-lighten-3" href="https://yetris.netlify.com/">Yetris</a></li>
                   <li><a class="grey-text text-lighten-3" href="https://herbdb.herokuapp.com/">HerbDB</a></li>
-                  {/* <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li> */}
+                  <li><a class="grey-text text-lighten-3" href="https://clempire.nikl.me/">Clempire</a></li>
                 </ul>
               </div>
             </div>

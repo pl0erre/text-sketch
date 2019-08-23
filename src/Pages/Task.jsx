@@ -21,7 +21,7 @@ export default class Task extends Component {
     this.state = { 
       text_url: '',
       nr_sentences: '',
-      text_processed: 'Your Processed Text goes here',
+      text_processed: 'Your processed text goes here ..',
       languages: [],
       labels: [],
       text_name: '',
@@ -91,7 +91,7 @@ export default class Task extends Component {
                         value={this.state.nr_sentences} />
                 <Button type="submit" 
                         name="submit"
-                        className="lime teal-text text-darken-3">Process text</Button>
+                        className="lime teal-text text-darken-3">Process</Button>
               </form>
             </Card>
             <Card>
@@ -139,7 +139,7 @@ export default class Task extends Component {
                 Enter this Url and select the length of the summary being generated.
                 Hit "Process" and wait for the analysis being completed.
                 The result will be displayed below. 
-                This inncluding the classifications as well as the detected language with their relevances in percentage.
+                This includes classifications as well as the language detected plus their relevances in percentage.
               </p>
             </Card> 
 
