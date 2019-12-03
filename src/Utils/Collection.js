@@ -7,8 +7,6 @@ export default class Collection  {
 
   constructor(domain) {
     this.domain = domain || process.env.REACT_APP_API;
-    // this.domain = domain || "http://localhost:3001";
-    // this.session = new Auth();
   }
 
   getCollection() {
@@ -19,16 +17,6 @@ export default class Collection  {
       headers: { 'content-type': 'application/x-www-form-urlencoded' },
     })
   }
-
-  // getCollection() {
-  //   const userId = this.service.getUser().id;
-
-  //   return axios({
-  //     method: "POST",
-  //     url: "/text/collection",
-  //     baseURL: this.domain,
-  //     data : {id:userId},
-  //     headers: { 'content-type': 'application/x-www-form-urlencoded' },
 
   deleteText(id) {
     return axios({

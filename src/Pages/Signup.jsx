@@ -11,7 +11,6 @@ import {Card, TextInput, Button} from 'react-materialize';
 import Auth from "../Utils/Auth";
 const auth = new Auth();
 
-
 export default class Signup extends Component {
 
   constructor() {
@@ -23,7 +22,16 @@ export default class Signup extends Component {
         password: "",
         password_repeat: ""
       },
-      error: null
+      formError: {
+        email: "",
+        password: "",
+        passord_repeat: ""
+      },
+      emailValid: false,
+      passwordValid: false,
+      password_reapeatValid: false,
+      formValid: false,
+      serverError: null,
     };
 
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
@@ -37,14 +45,21 @@ export default class Signup extends Component {
     } else {
       auth.signup(this.state.user)
       .then(() => {
-        this.setState({ error: "" });
+        this.setState({ serverError: "" });
         this.props.history.push("/login");
       })
       .catch((err) => {
-        this.setState({ error: err.message });
+        this.setState({ serverError: err.message });
+        this.displayErr();
+        debugger
       });
     }
   };
+
+  displayErr() {
+    let message = document.getElementsByClassName("errorMessage")[0];
+    message.style.display = "flex";
+  }
 
   handleFormChange(event) {
     let user = this.state.user
@@ -94,7 +109,12 @@ export default class Signup extends Component {
                     className="Submit-btn lime  grey-text text-darken-3">Go for it!</Button>      
           </form>
         </Card>
-          <Link to="/login">Login</Link>
+        <Link to="/login">Login</Link>
+        <div>
+          {this.state.formError.forEach((key) => 
+            <p>{key}</p> 
+          )}
+        </div>
         </div> 
       </HomeLayout>
       

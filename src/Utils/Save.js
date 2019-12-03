@@ -7,7 +7,6 @@ export default class Save  {
 
   constructor(domain) {
     this.domain = domain || process.env.REACT_APP_API;
-    // this.domain = domain || "http://localhost:3001";
   }
 
   saveText(text_processed, languages, labels, text_name) {

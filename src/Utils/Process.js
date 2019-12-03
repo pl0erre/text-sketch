@@ -7,7 +7,6 @@ export default class Process {
   
   constructor(domain) {
     this.domain = domain || process.env.REACT_APP_API;
-    // this.domain = domain || "http://localhost:3001";
   }
 
   getResult(text_url, nr_sentences) {
